@@ -11,6 +11,222 @@ int main()
 	cout.setf(ios::boolalpha);
 
 
+	///// 06.05.2024 //////
+
+
+	//  Даны два целых числа : D(день) и M(месяц), определяющие правиль -
+	//	ную дату невисокосного года.Вывести значения D и M для даты, наступна
+	//	для указанной.
+
+	/*int d, m, y, dmax;
+	cin >> d >> m >> y;
+	d++;
+
+	switch (m)
+	{
+	case 4: case 6: case 9: case 11: dmax = 30; break;
+	case 2:                          dmax = (y % 4 == 0 && y % 100 != 0 || y % 400 == 0) ? 29 : 28; break;
+	default:                         dmax = 31;	break;
+	}
+
+	if (d > dmax)
+	{
+		d = 1;
+		m++;
+	}
+	m = (m == 13) ? 1 : m;
+
+	cout << d << "." << m << "." << y << endl;*/
+
+
+
+	//  Даны два целых числа : D(день) и M(месяц), определяющие правиль -
+	//	ную дату невисокосного года.Вывести значения D и M для даты, предше -
+	//	ствующей указанной.
+
+	/*int d, m, dmax;
+	cin >> d >> m;
+	switch (m-1)
+	{
+	case 4: case 6: case 9: case 11: dmax = 30; break;
+	case 2:                          dmax = 28; break;
+	default:                         dmax = 31;	break;
+	}
+
+	d--;
+	
+	if (d == 0)
+	{
+		m--;
+		d = dmax;
+	}
+
+	if (m == 0)
+		m = 12;
+
+	cout << d << "." << m << endl;*/
+
+
+
+	//  Дано целое число в диапазоне 20–69, определяющее возраст(в годах).
+	//	Вывести строку - описание указанного возраста, обеспечив правильное со -
+	//	гласование числа со словом «год», например: 20 — «двадцать лет», 32 —
+	//	«тридцать два года», 41 — «сорок один год».
+
+
+	int n, n1, n2;
+	cin >> n;
+	n1 = n / 10;
+	n2 = n % 10;
+	switch (n1)
+	{
+	case 2: cout << "Двадцять "; break;
+	case 3: cout << "Тридцять "; break;
+	case 4: cout << "Сорок "; break;
+	case 5: cout << "П'тдесят "; break;
+	case 6: cout << "Шісьдесят "; break;
+	}
+
+	switch (n2)
+	{
+	case 0: cout << "років" << endl; break;
+	case 1: cout << "один рік" << endl; break;
+	case 2: cout << "два роки" << endl; break;
+	case 3: cout << "три роки" << endl; break;
+	case 4: cout << "чотри роки" << endl; break;
+	case 5: cout << "п'ть років" << endl; break;
+	case 6: cout << "шість років" << endl; break;
+	case 7: cout << "сім років" << endl; break;
+	case 8: cout << "вісім років" << endl; break;
+	case 9: cout << "дев'ть років" << endl; break;
+	}
+
+
+	/*
+	    В восточном календаре принят 60 - летний цикл, состоящий из 12 - лет -
+		них подциклов, обозначаемых названиями цвета : зеленый, красный, жел -
+		тый, белый и черный.В каждом подцикле годы носят названия животных :
+	    крысы, коровы, тигра, зайца, дракона, змеи, лошади, овцы, обезьяны, ку -
+		рицы, собаки и свиньи.По номеру года определить его название, если 1984
+		год — начало цикла : «год зеленой крысы».*/
+
+
+
+	/*
+	I = 1
+	V = 5
+	X = 10
+	L = 50
+	C = 100
+	D = 500
+	M = 1000
+
+	2024
+	MMXXIV
+
+	*/
+
+
+
+	/*int d;
+	cin >> d;
+	switch (d)
+	{
+	case 1:
+		cout << "Mo" << endl;
+		break;
+	case 2:
+		cout << "Tu" << endl;
+		break;
+	default:
+		cout << "Not day" << endl;
+		break;
+	}*/
+
+	/*double f = 6.53;
+	cout << f << endl;
+
+	int m;
+	cin >> m;
+	switch (m)
+	{
+	case 1: case 2:  case 12: cout << "Зима" << endl; break;
+	case 3: case 4:  case 5:  cout << "Весна" << endl; break;
+	case 6: case 7:  case 8:  cout << "Літо" << endl; break;
+	case 9: case 10: case 11: cout << "Осінь" << endl; break;
+	default:                  cout << "Not month" << endl; break;
+	}*/
+
+	//float f;
+	/*cin >> f;
+	switch (f)
+	{
+	default:
+		break;
+	}*/
+
+	// 2+4
+	// 6
+
+	/*int a, b, res = 0;
+	char op;
+	cin >> a >> op >> b;*/
+	/*if (op == '+')
+	{
+		res = a + b;
+	}
+	else if (op == '-')
+	{
+		res = a - b;
+	}
+	else if (op == '*')
+	{
+		res = a * b;
+	}
+	else if (op == '/')
+	{
+		res = a / b;
+	}*/
+
+	/*bool f = true;
+	switch (op)
+	{
+	case '+': res = a + b; break;
+	case '-': res = a - b; break;
+	case '*': res = a * b; break;
+	case '/': res = a / b; break;
+	default:
+		f = false;
+		cout << "Not operation" << endl;
+	}
+	if (f)
+	{
+		cout << res << endl;
+	}*/
+
+	/*float m = 3.25;
+	m++;
+	cout << m << endl;*/
+
+	/*int a, b, c, d, e, f, g, max;
+	cin >> a >> b >> c >> d >> e >> f >> g;
+	max = a;
+	if (b > max)
+		max = b;
+	if (c > max)
+		max = c;
+	if (d > max)
+		max = d;
+	if (e > max)
+		max = e;
+	if (f > max)
+		max = f;
+	if (g > max)
+		max = g;
+	cout << max << endl;*/
+
+
+
 	///// 26.04.2024 //////
 
 
@@ -53,17 +269,20 @@ int main()
 	cin >> b;
 	cin >> c;
 
-	if (a > b && a > c)	
-	{ 
-		cout << a << endl; 
-	}
-	else if (b > c)
+	if (a > b && a > c)
 	{
-		cout << b << endl;
+		cout << a << endl;
 	}
 	else
 	{
-		cout << c << endl;
+		if (b > c)
+		{
+			cout << b << endl;
+		}
+		else
+		{
+			cout << c << endl;
+		}
 	}
 	}*/
 
