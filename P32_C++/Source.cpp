@@ -11,6 +11,84 @@ int main()
 	cout.setf(ios::boolalpha);
 
 
+	///// 10.05.2024 //////
+
+
+	/*int a = 1;
+
+	while (a > 0)
+	{
+		cout << a++ << " ";
+	}*/
+
+
+
+	//3751 = 16
+
+	long long n, res = 0;
+
+	cout << "n = ";
+	cin >> n;
+
+	while (n > 0) 
+	{
+		res += n % 10;
+		n /= 10;
+	}
+	cout << res << endl;
+
+
+
+	// Дано целое число N(> 0).Найти наибольшее целое число K, квадрат
+	// которого не превосходит N : K2 ≤ N.Функцию извлечения квадратного кор -
+	// ня не использовать.
+
+	/*int n, k = 0;
+	cout << "n = ";
+	cin >> n;
+
+	while (k * k <= n)
+	{
+		k++;
+	}
+	k--;
+	cout << k << endl;*/
+
+
+
+
+
+	//=============================================================================
+
+	// Дано целое число N(> 0).Если оно является степенью числа 3, то вы -
+	// вести True, если не является — вывести False.
+
+	/*int n;
+
+	cout << "n = ";
+	cin >> n;
+
+	int k = 1;
+	while (k < n)
+	{
+		k *= 3;
+	}
+	if (k == n)
+	{
+		cout << true << endl;
+	}
+	else
+	{
+		cout << false << endl;
+	}*/
+
+	/*while (true)
+	{
+
+	}*/
+
+	//====================================================================
+
 	///// 06.05.2024 //////
 
 
@@ -54,7 +132,7 @@ int main()
 	}
 
 	d--;
-	
+
 	if (d == 0)
 	{
 		m--;
@@ -74,7 +152,7 @@ int main()
 	//	«тридцать два года», 41 — «сорок один год».
 
 
-	int n, n1, n2;
+	/*int n, n1, n2;
 	cin >> n;
 	n1 = n / 10;
 	n2 = n % 10;
@@ -99,328 +177,329 @@ int main()
 	case 7: cout << "сім років" << endl; break;
 	case 8: cout << "вісім років" << endl; break;
 	case 9: cout << "дев'ть років" << endl; break;
-	}
+	}*/
 
 
 	/*
-	    В восточном календаре принят 60 - летний цикл, состоящий из 12 - лет -
+		В восточном календаре принят 60 - летний цикл, состоящий из 12 - лет -
 		них подциклов, обозначаемых названиями цвета : зеленый, красный, жел -
 		тый, белый и черный.В каждом подцикле годы носят названия животных :
-	    крысы, коровы, тигра, зайца, дракона, змеи, лошади, овцы, обезьяны, ку -
+		крысы, коровы, тигра, зайца, дракона, змеи, лошади, овцы, обезьяны, ку -
 		рицы, собаки и свиньи.По номеру года определить его название, если 1984
 		год — начало цикла : «год зеленой крысы».*/
 
 
 
-	/*
-	I = 1
-	V = 5
-	X = 10
-	L = 50
-	C = 100
-	D = 500
-	M = 1000
+		/*
+		I = 1
+		V = 5
+		X = 10
+		L = 50
+		C = 100
+		D = 500
+		M = 1000
 
-	2024
-	MMXXIV
+		2024
+		MMXXIV
 
-	*/
-
-
-
-	/*int d;
-	cin >> d;
-	switch (d)
-	{
-	case 1:
-		cout << "Mo" << endl;
-		break;
-	case 2:
-		cout << "Tu" << endl;
-		break;
-	default:
-		cout << "Not day" << endl;
-		break;
-	}*/
-
-	/*double f = 6.53;
-	cout << f << endl;
-
-	int m;
-	cin >> m;
-	switch (m)
-	{
-	case 1: case 2:  case 12: cout << "Зима" << endl; break;
-	case 3: case 4:  case 5:  cout << "Весна" << endl; break;
-	case 6: case 7:  case 8:  cout << "Літо" << endl; break;
-	case 9: case 10: case 11: cout << "Осінь" << endl; break;
-	default:                  cout << "Not month" << endl; break;
-	}*/
-
-	//float f;
-	/*cin >> f;
-	switch (f)
-	{
-	default:
-		break;
-	}*/
-
-	// 2+4
-	// 6
-
-	/*int a, b, res = 0;
-	char op;
-	cin >> a >> op >> b;*/
-	/*if (op == '+')
-	{
-		res = a + b;
-	}
-	else if (op == '-')
-	{
-		res = a - b;
-	}
-	else if (op == '*')
-	{
-		res = a * b;
-	}
-	else if (op == '/')
-	{
-		res = a / b;
-	}*/
-
-	/*bool f = true;
-	switch (op)
-	{
-	case '+': res = a + b; break;
-	case '-': res = a - b; break;
-	case '*': res = a * b; break;
-	case '/': res = a / b; break;
-	default:
-		f = false;
-		cout << "Not operation" << endl;
-	}
-	if (f)
-	{
-		cout << res << endl;
-	}*/
-
-	/*float m = 3.25;
-	m++;
-	cout << m << endl;*/
-
-	/*int a, b, c, d, e, f, g, max;
-	cin >> a >> b >> c >> d >> e >> f >> g;
-	max = a;
-	if (b > max)
-		max = b;
-	if (c > max)
-		max = c;
-	if (d > max)
-		max = d;
-	if (e > max)
-		max = e;
-	if (f > max)
-		max = f;
-	if (g > max)
-		max = g;
-	cout << max << endl;*/
+		*/
 
 
 
-	///// 26.04.2024 //////
-
-
-	// Дано трехзначное число.Проверить истинность высказывания :
-	// «Цифры данного числа образуют возрастающую последовательность».
-
-	//258
-
-	/*int n, a, b, c;
-	cin >> n;
-	a = n / 100;
-	b = n / 10 % 10;
-	c = n % 10;
-	bool res = a < b && b < c;
-	cout << res << endl;*/
-
-
-	// Даны три целых числа : A, B, C.Проверить истинность высказыва -
-	// ния : «Ровно одно из чисел A, B, C положительное».
-	/*int a, b, c;
-	cin >> a >> b >> c;
-	bool res = (a > 0) + (b > 0) + (c > 0) == 1;
-	cout << res << endl;*/
-
-	/*int a, b;
-	cin >> a;
-	if (a == 5)
-	{
-		b = 10;
-	}
-	else
-	{
-		b = 15;
-	}
-	cout << b << endl;*/
-
-
-	/*int a, b, c;
-	cin >> a;
-	cin >> b;
-	cin >> c;
-
-	if (a > b && a > c)
-	{
-		cout << a << endl;
-	}
-	else
-	{
-		if (b > c)
+		/*int d;
+		cin >> d;
+		switch (d)
 		{
-			cout << b << endl;
+		case 1:
+			cout << "Mo" << endl;
+			break;
+		case 2:
+			cout << "Tu" << endl;
+			break;
+		default:
+			cout << "Not day" << endl;
+			break;
+		}*/
+
+		/*double f = 6.53;
+		cout << f << endl;
+
+		int m;
+		cin >> m;
+		switch (m)
+		{
+		case 1: case 2:  case 12: cout << "Зима" << endl; break;
+		case 3: case 4:  case 5:  cout << "Весна" << endl; break;
+		case 6: case 7:  case 8:  cout << "Літо" << endl; break;
+		case 9: case 10: case 11: cout << "Осінь" << endl; break;
+		default:                  cout << "Not month" << endl; break;
+		}*/
+
+		//float f;
+		/*cin >> f;
+		switch (f)
+		{
+		default:
+			break;
+		}*/
+
+		// 2+4
+		// 6
+
+		/*int a, b, res = 0;
+		char op;
+		cin >> a >> op >> b;*/
+		/*if (op == '+')
+		{
+			res = a + b;
+		}
+		else if (op == '-')
+		{
+			res = a - b;
+		}
+		else if (op == '*')
+		{
+			res = a * b;
+		}
+		else if (op == '/')
+		{
+			res = a / b;
+		}*/
+
+		/*bool f = true;
+		switch (op)
+		{
+		case '+': res = a + b; break;
+		case '-': res = a - b; break;
+		case '*': res = a * b; break;
+		case '/': res = a / b; break;
+		default:
+			f = false;
+			cout << "Not operation" << endl;
+		}
+		if (f)
+		{
+			cout << res << endl;
+		}*/
+
+		/*float m = 3.25;
+		m++;
+		cout << m << endl;*/
+
+		/*int a, b, c, d, e, f, g, max;
+		cin >> a >> b >> c >> d >> e >> f >> g;
+		max = a;
+		if (b > max)
+			max = b;
+		if (c > max)
+			max = c;
+		if (d > max)
+			max = d;
+		if (e > max)
+			max = e;
+		if (f > max)
+			max = f;
+		if (g > max)
+			max = g;
+		cout << max << endl;*/
+
+
+
+		///// 26.04.2024 //////
+
+
+		// Дано трехзначное число.Проверить истинность высказывания :
+		// «Цифры данного числа образуют возрастающую последовательность».
+
+		//258
+
+		/*int n, a, b, c;
+		cin >> n;
+		a = n / 100;
+		b = n / 10 % 10;
+		c = n % 10;
+		bool res = a < b && b < c;
+		cout << res << endl;*/
+
+
+		// Даны три целых числа : A, B, C.Проверить истинность высказыва -
+		// ния : «Ровно одно из чисел A, B, C положительное».
+		/*int a, b, c;
+		cin >> a >> b >> c;
+		bool res = (a > 0) + (b > 0) + (c > 0) == 1;
+		cout << res << endl;*/
+
+		/*int a, b;
+		cin >> a;
+		if (a == 5)
+		{
+			b = 10;
 		}
 		else
 		{
-			cout << c << endl;
+			b = 15;
 		}
-	}
-	}*/
+		cout << b << endl;*/
 
 
-	// Дано целое число, лежащее в диапазоне 1–999.Вывести его строку -
-	// описание вида «четное двузначное число», «нечетное трехзначное число»
+		/*int a, b, c;
+		cin >> a;
+		cin >> b;
+		cin >> c;
+
+		if (a > b && a > c)
+		{
+			cout << a << endl;
+		}
+		else
+		{
+			if (b > c)
+			{
+				cout << b << endl;
+			}
+			else
+			{
+				cout << c << endl;
+			}
+		}
+		}*/
 
 
-
-	/*int a, b, c, max;
-	cin >> a >> b >> c;
-	if (a > b)
-	{
-		max = a;
-	}
-	else
-	{
-		max = b;
-	}*/
-
-	// (condition) ? oper1 : oper2;
-
-	/*(a > b) ? max = a : max = b;
-
-	max = (a > b) ? a : b;
-
-	max = (a > b && a > c) ? a : (b > c) ? b : c;*/
-
-
-
-	// Определить, останется ли в клеёнке более N дырок если во время
-	// обеда K раз проткнуть её вилкой с M отломанными зубчиками и 
-	// L раз – целой вилкой, у которой S зубчиков.
-
-	//d = k*(s-m) + l*s
-
-	/*int a, b, c;
-	float p, s;
-
-	cout << " a: ";
-	cin >> a;
-	cout << " b: ";
-	cin >> b;
-	cout << " c: ";
-	cin >> c;
-
-	p = (a + b + c) / 2.;
-	s = sqrt(p * (p - a) * (p - b) * (p - c));
-
-	cout << ": ";
-	cout << p << endl;
-	cout << s;
-	cout << " ^2";*/
+		// Дано целое число, лежащее в диапазоне 1–999.Вывести его строку -
+		// описание вида «четное двузначное число», «нечетное трехзначное число»
 
 
 
+		/*int a, b, c, max;
+		cin >> a >> b >> c;
+		if (a > b)
+		{
+			max = a;
+		}
+		else
+		{
+			max = b;
+		}*/
 
-	///// 22.04.2024 //////
+		// (condition) ? oper1 : oper2;
 
-	// type name;
+		/*(a > b) ? max = a : max = b;
 
-	// bool - 1b
+		max = (a > b) ? a : b;
 
-	// char  - 1b
-
-
-	// byte - 1b
-	// short  - 2b
-	// int - 4b
-	// long - 4b
-	// long long - 8b
-
-	// float - 4b (7)
-	// double - 8b (15)
-	// long double - 10b
-
-	/*short year = 2024;
-	cout << &year << endl;
-
-	int t = 'a';
-	char t1 = 98;
-	cout << t << endl;
-	cout << t1 << endl;
-
-	float f = 6.9999;
-	cout << f << endl;
-
-	float x = -1.5;*/
-
-	//unsigned int c = 3000000000;
-	//cout << c << endl;
-
-	//const int a = 5;
-	////a = 9;
-
-	//bool b = true;
-	//cout << b << endl;
-
-	// -, +, ++, --
-	// =, +, -, *, /, %, +=, -=, *=, /=, %=
-
-	// !
-	// <, >, <=, >=, ==, !=, &&, ||, ^(xor)
-
-	// >>, <<, ~, &, |, ::, ?:, [], {} , (), , . ->,  \  
-
-	//int a = 5, b = 4, c;
-
-	//a = a + b;
-	//a += b;
-	//a = a + 1;
-	//a += 1;
-	//a++;
-	//++a;
-	//cout << a << endl;  //5
-	//cout << a++ << endl; //6
-	//cout << ++a << endl; // 7
-	//cout << a << endl; // 7
-
-	/*c = ++a * (--a - --b/a++);
-	cout << a << endl;
-	cout << b << endl;
-	cout << c << endl;
-
-	cout << 5 / 3.f << endl;
-	cout << pow(5, 3) << endl;*/
+		max = (a > b && a > c) ? a : (b > c) ? b : c;*/
 
 
 
-	//c = a * b;
-	//cout << c << endl;
-	//cin >> a;
+		// Определить, останется ли в клеёнке более N дырок если во время
+		// обеда K раз проткнуть её вилкой с M отломанными зубчиками и 
+		// L раз – целой вилкой, у которой S зубчиков.
+
+		//d = k*(s-m) + l*s
+
+		/*int a, b, c;
+		float p, s;
+
+		cout << " a: ";
+		cin >> a;
+		cout << " b: ";
+		cin >> b;
+		cout << " c: ";
+		cin >> c;
+
+		p = (a + b + c) / 2.;
+		s = sqrt(p * (p - a) * (p - b) * (p - c));
+
+		cout << ": ";
+		cout << p << endl;
+		cout << s;
+		cout << " ^2";*/
 
 
 
 
-	/*cout << "Hello C++" << endl;
-	cout << "Мене звати Сергій" << endl;*/
+		///// 22.04.2024 //////
+
+		// type name;
+
+		// bool - 1b
+
+		// char  - 1b
+
+
+		// byte - 1b
+		// short  - 2b
+		// int - 4b
+		// long - 4b
+		// long long - 8b
+
+		// float - 4b (7)
+		// double - 8b (15)
+		// long double - 10b
+
+		/*short year = 2024;
+		cout << &year << endl;
+
+		int t = 'a';
+		char t1 = 98;
+		cout << t << endl;
+		cout << t1 << endl;
+
+		float f = 6.9999;
+		cout << f << endl;
+
+		float x = -1.5;*/
+
+		//unsigned int c = 3000000000;
+		//cout << c << endl;
+
+		//const int a = 5;
+		////a = 9;
+
+		//bool b = true;
+		//cout << b << endl;
+
+		// -, +, ++, --
+		// =, +, -, *, /, %, +=, -=, *=, /=, %=
+
+		// !
+		// <, >, <=, >=, ==, !=, &&, ||, ^(xor)
+
+		// >>, <<, ~, &, |, ::, ?:, [], {} , (), , . ->,  \  
+
+		//int a = 5, b = 4, c;
+
+		//a = a + b;
+		//a += b;
+		//a = a + 1;
+		//a += 1;
+		//a++;
+		//++a;
+		//cout << a << endl;  //5
+		//cout << a++ << endl; //6
+		//cout << ++a << endl; // 7
+		//cout << a << endl; // 7
+
+		/*c = ++a * (--a - --b/a++);
+		cout << a << endl;
+		cout << b << endl;
+		cout << c << endl;
+
+		cout << 5 / 3.f << endl;
+		cout << pow(5, 3) << endl;*/
+
+
+
+		//c = a * b;
+		//cout << c << endl;
+		//cin >> a;
+
+
+
+
+		/*cout << "Hello C++" << endl;
+		cout << "Мене звати Сергій" << endl;*/
 
 	system("pause");
+	return 0;
 }
