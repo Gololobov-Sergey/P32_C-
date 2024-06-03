@@ -30,12 +30,74 @@ int main()
 	SetColor(White, Black);
 	system("cls");
 
+	///// 03.06.2024 //////
+
+	//=============================================================================
+
+	// type name[rows][cols];
+
+	const int rows = 3;
+	const int cols = 3;
+	int arr[rows][cols]; // = { {3,5,8},{2,4},7,8,4 };
+
+	int minValue = 10, maxValue = 99;
+
+	for (size_t i = 0; i < rows; i++)
+	{
+		for (size_t j = 0; j < cols; j++)
+		{
+			arr[i][j] = rand() % (maxValue - minValue + 1) + minValue;
+		}
+	}
+
+#pragma region MaxSymbol
+
+	int symbolMaxValue = 0;
+	int m = maxValue;
+	if (maxValue <= 0)
+	{
+		symbolMaxValue = 1;
+		m = abs(maxValue);
+	}
+	symbolMaxValue += (int)log10(m) + 1;
+
+	int symbolMinValue = 0;
+	int k = minValue;
+	if (minValue <= 0)
+	{
+		symbolMinValue = 1;
+		k = abs(minValue);
+	}
+	symbolMinValue += (int)log10(k) + 1;
+
+	int bs = (symbolMaxValue > symbolMinValue) ? symbolMaxValue : symbolMinValue;
+
+#pragma endregion
+
+	for (size_t i = 0; i < rows; i++)
+	{
+		for (size_t j = 0; j < cols; j++)
+		{
+			cout << setw(bs + 1) << arr[i][j];
+		}
+		cout << endl;
+	}
+
+
+
+
+
+	//cout << (int)log10(-4576) + 1 << endl;
+
+	//arr[2][1] = 10;
+
+
 
 	///// 31.05.2024 //////
 
 	//=============================================================================
 
-	const int size = 10;
+	/*const int size = 10;
 	int arrA[size];
 	int arrB[size];
 	int arrC[size * 2];
@@ -59,7 +121,7 @@ int main()
 	for (size_t i = 0; i < size / 2; i++)
 	{
 		swap(arrA[i], arrA[size - 1 - i]);
-	}
+	}*/
 
 
 
@@ -68,7 +130,7 @@ int main()
 	{
 		for (size_t j = 0; j < size - 1 - i; j++)
 		{
-			if (arrA[j] < arrA[j + 1]) 
+			if (arrA[j] < arrA[j + 1])
 			{
 				swap(arrA[j], arrA[j + 1]);
 				count++;
@@ -80,12 +142,12 @@ int main()
 	arrA[0] = arrA[size - 1];
 	arrA[size - 1] = t;*/
 
-	cout << "A = ";
+	/*cout << "A = ";
 	for (size_t i = 0; i < size; i++)
 	{
 		cout << arrA[i] << " ";
 	}
-	cout << endl;
+	cout << endl;*/
 
 	//cout << count << endl;
 
@@ -556,10 +618,6 @@ int main()
 
 	}
 	cout << endl;*/
-
-
-
-
 
 
 
