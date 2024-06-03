@@ -36,11 +36,12 @@ int main()
 
 	// type name[rows][cols];
 
-	const int rows = 3;
-	const int cols = 3;
+	//srand(time(0));
+	const int rows = 10;
+	const int cols = 2;
 	int arr[rows][cols]; // = { {3,5,8},{2,4},7,8,4 };
 
-	int minValue = 10, maxValue = 99;
+	int minValue = -20, maxValue = 20;
 
 	for (size_t i = 0; i < rows; i++)
 	{
@@ -74,7 +75,7 @@ int main()
 
 #pragma endregion
 
-	for (size_t i = 0; i < rows; i++)
+	/*for (size_t i = 0; i < rows; i++)
 	{
 		for (size_t j = 0; j < cols; j++)
 		{
@@ -82,9 +83,107 @@ int main()
 		}
 		cout << endl;
 	}
+	cout << endl;*/
+
+	//=============================================================================
+
+
+	/*int arr_max[rows];
+
+	for (size_t i = 0; i < rows; i++)
+	{
+		int max = arr[i][0];
+		for (size_t j = 0; j < cols; j++)
+		{
+			if (arr[i][j] > max)
+			{
+				max = arr[i][j];
+			}
+		}
+		arr_max[i] = max;
+	}
+
+	int min = arr_max[0];
+	for (size_t i = 0; i < rows; i++)
+	{
+		if (min < arr_max[i])
+		{
+			min = arr_max[i];
+		}
+	}
+
+	cout << min << endl;*/
+
+
+	//=============================================================================
+
+
+	/*int arr_min[cols];
+
+	for (size_t j = 0; j < cols; j++)
+	{
+		int min = arr[0][j];
+		for (size_t i = 0; i < rows; i++)
+		{
+			if (arr[i][j] > min)
+			{
+				min = arr[i][j];
+			}
+		}
+		arr_min[j] = min;
+	}
+
+	int max = arr_min[0];
+	for (size_t i = 0; i < cols; i++)
+	{
+		if (max < arr_min[i])
+		{
+			max = arr_min[i];
+		}
+	}
+
+	cout << max << endl;*/
 
 
 
+	//=============================================================================
+
+	/*int max, min;
+	max = min = arr[0][0];
+
+	for (size_t i = 0; i < rows; i++)
+	{
+		for (size_t j = 0; j < cols; j++)
+		{
+			if (arr[i][j] > max)
+			{
+				max = arr[i][j];
+			}
+
+			if (arr[i][j] < min)
+			{
+				min = arr[i][j];
+			}
+		}
+	}
+
+	for (size_t i = 0; i < rows; i++)
+	{
+		for (size_t j = 0; j < cols; j++)
+		{
+			if (arr[i][j] == max)
+			{
+				SetColor(Red, Black);
+			}
+			if (arr[i][j] == min)
+			{
+				SetColor(Green, Black);
+			}
+			cout << setw(bs + 1) << arr[i][j];
+			SetColor(White, Black);
+		}
+		cout << endl;
+	}*/
 
 
 	//cout << (int)log10(-4576) + 1 << endl;
@@ -92,6 +191,44 @@ int main()
 	//arr[2][1] = 10;
 
 
+	// Дано множество A из N точек на плоскости и точка B(точки заданы
+	// своими координатами x, y).Найти точку из множества A, наиболее близ -
+	// кую к точке B.
+
+	const int r = 10;
+	const int c = 3;
+	int A[r][c];
+	for (size_t i = 0; i < r; i++)
+	{
+		A[i][0] = 'A' + i;
+		A[i][1] = rand() % (maxValue - minValue + 1) + minValue;
+		A[i][2] = rand() % (maxValue - minValue + 1) + minValue;
+	}
+
+	for (size_t i = 0; i < r; i++)
+	{
+		cout << (char)A[i][0] << " (" << A[i][1] << ", " << A[i][2] << ")" << endl;
+	}
+
+	int x, y;
+	cout << "Задайте координати точки: " << endl;
+	cin >> x >> y;
+
+	double min = INT_MAX;
+	int ind;
+	for (size_t i = 0; i < rows; i++)
+	{
+		double d = sqrt(pow(x - A[i][1], 2) + pow(y - A[i][2], 2));
+		if (d < min)
+		{
+			min = d;
+			ind = i;
+		}
+	}
+
+	cout << "Найближча точка: " << ind + 1 << endl;
+
+	
 
 	///// 31.05.2024 //////
 
