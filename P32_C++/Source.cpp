@@ -30,18 +30,17 @@ int main()
 	SetColor(White, Black);
 	system("cls");
 
-	///// 03.06.2024 //////
+
+	///// 07.06.2024 //////
 
 	//=============================================================================
 
-	// type name[rows][cols];
-
-	//srand(time(0));
-	const int rows = 10;
-	const int cols = 2;
+	srand(time(0));
+	const int rows = 4;
+	const int cols = 5;
 	int arr[rows][cols]; // = { {3,5,8},{2,4},7,8,4 };
 
-	int minValue = -20, maxValue = 20;
+	int minValue = 0, maxValue = 9;
 
 	for (size_t i = 0; i < rows; i++)
 	{
@@ -72,6 +71,119 @@ int main()
 	symbolMinValue += (int)log10(k) + 1;
 
 	int bs = (symbolMaxValue > symbolMinValue) ? symbolMaxValue : symbolMinValue;
+
+#pragma endregion
+
+	for (size_t i = 0; i < rows; i++)
+	{
+		for (size_t j = 0; j < cols; j++)
+		{
+			cout << setw(bs + 1) << arr[i][j];
+		}
+		cout << endl;
+	}
+	cout << endl;
+
+
+	/// vertical
+	/*for (size_t j = 0; j < cols; j++)
+	{
+		for (size_t i = 0; i < rows / 2; i++)
+		{
+			swap(arr[i][j], arr[rows - 1 - i][j]);
+		}
+	}*/
+
+	/// gorizontal
+	/*for (size_t i = 0; i < rows; i++)
+	{
+		for (size_t j = 0; j < cols / 2; j++)
+		{
+			swap(arr[i][j], arr[i][cols - 1 - j]);
+		}
+	}*/
+
+	/// diagonal
+	/*for (size_t i = 0; i < rows-1; i++)
+	{
+		for (size_t j = i+1; j < cols; j++)
+		{
+			swap(arr[i][j], arr[j][i]);
+		}
+	}*/
+
+	/// 2-diagonal
+	/*for (size_t i = 0; i < rows - 1; i++)
+	{
+		for (size_t j = 0; j < cols-1-i; j++)
+		{
+			swap(arr[i][j], arr[rows-1-j][cols-1-i]);
+		}
+	}*/
+
+	/*for (size_t i = 0; i < rows * cols; i++)
+	{
+		cout << setw(bs + 1) << arr[i / cols][i % cols];
+		if ((i + 1) % cols == 0)
+		{
+			cout << endl;
+		}
+	}
+	cout << endl;*/
+
+	for (size_t i = 0; i < rows; i++)
+	{
+		for (size_t j = 0; j < cols; j++)
+		{
+			cout << setw(bs + 1) << arr[i][j];
+		}
+		cout << endl;
+	}
+	cout << endl;
+
+
+	///// 03.06.2024 //////
+
+	//=============================================================================
+
+	// type name[rows][cols];
+
+	//srand(time(0));
+	//const int rows = 10;
+	//const int cols = 2;
+	//int arr[rows][cols]; // = { {3,5,8},{2,4},7,8,4 };
+
+	//int minValue = -20, maxValue = 20;
+
+	//for (size_t i = 0; i < rows; i++)
+	//{
+	//	for (size_t j = 0; j < cols; j++)
+	//	{
+	//		arr[i][j] = rand() % (maxValue - minValue + 1) + minValue;
+	//	}
+	//}
+
+#pragma region MaxSymbol
+
+	/*int symbolMaxValue = 0;
+	int m = maxValue;
+	if (maxValue <= 0)
+	{
+		symbolMaxValue = 1;
+		m = abs(maxValue);
+	}
+	symbolMaxValue += (int)log10(m) + 1;
+
+	int symbolMinValue = 0;
+	int k = minValue;
+	if (minValue <= 0)
+	{
+		symbolMinValue = 1;
+		k = abs(minValue);
+	}
+	symbolMinValue += (int)log10(k) + 1;
+
+	int bs = (symbolMaxValue > symbolMinValue) ? symbolMaxValue : symbolMinValue;*/
 
 #pragma endregion
 
@@ -195,7 +307,7 @@ int main()
 	// своими координатами x, y).Найти точку из множества A, наиболее близ -
 	// кую к точке B.
 
-	const int r = 10;
+	/*const int r = 10;
 	const int c = 3;
 	int A[r][c];
 	for (size_t i = 0; i < r; i++)
@@ -226,9 +338,9 @@ int main()
 		}
 	}
 
-	cout << "Найближча точка: " << ind + 1 << endl;
+	cout << "Найближча точка: " << ind + 1 << endl;*/
 
-	
+
 
 	///// 31.05.2024 //////
 
