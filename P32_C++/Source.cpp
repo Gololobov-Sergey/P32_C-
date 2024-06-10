@@ -2,24 +2,9 @@
 #include<iomanip>
 #include<Windows.h>
 
+#include"myFunc.h"
+
 using namespace std;
-
-enum Color
-{
-	Black = 0, Blue = 1, Green = 2, Cyan = 3, Red = 4, Magenta = 5, Brown = 6, LightGray = 7, DarkGray = 8,
-	LightBlue = 9, LightGreen = 10, LightCyan = 11, LightRed = 12, LightMagenta = 13, Yellow = 14, White = 15
-};
-
-void SetColor(int text, int background)
-{
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (WORD)((background << 4) | text));
-}
-
-
-enum Direction
-{
-	UP, DOUN = 10, LEFT, RIGHT
-};
 
 
 int main()
@@ -29,60 +14,109 @@ int main()
 	cout.setf(ios::boolalpha);
 	SetColor(White, Black);
 	system("cls");
+	srand(time(0));
 
+
+	///// 10.06.2024 //////
+
+	//=============================================================================
+
+	starLine();
+
+	cout << starLine << endl;
+
+
+	/*int a, b;
+	cin >> a >> b;
+	int c = Sum(a, b);
+	cout << Sum(a, b) << endl;*/
+
+	//cout << avg3(3, 4, 6) << endl;
+
+	/*isEven(7);
+
+	int count = 0;
+	int a[] = { 1,2,4,6,8,0 };
+	for (size_t i = 0; i < 6; i++)
+	{
+		if (isEven(a[i])) 
+		{
+			count++;
+		}
+	}
+	cout << count << endl;*/
+
+	/*int a = 5;
+	a = Inc(a);
+	cout << a << endl;
+
+	cout << (isEven(a) && big10(a)) << endl;*/
+
+	const int size = 15;
+	int a[size];// = { 1,2,5,87,9,8,6,4,3,43};
+	setArray(a, size, 0, 9);
+	printArray(a, size);
+	//cout << findElemArray(a, size, 5) << endl;
+	reverseArray(a, size);
+	printArray(a, size);
+
+	// HW
+	// min, max, avg, sort, sum 
 
 	///// 07.06.2024 //////
 
 	//=============================================================================
 
-	srand(time(0));
-	const int rows = 4;
-	const int cols = 5;
-	int arr[rows][cols]; // = { {3,5,8},{2,4},7,8,4 };
-
-	int minValue = 0, maxValue = 9;
-
-	for (size_t i = 0; i < rows; i++)
-	{
-		for (size_t j = 0; j < cols; j++)
-		{
-			arr[i][j] = rand() % (maxValue - minValue + 1) + minValue;
-		}
-	}
-
-#pragma region MaxSymbol
-
-	int symbolMaxValue = 0;
-	int m = maxValue;
-	if (maxValue <= 0)
-	{
-		symbolMaxValue = 1;
-		m = abs(maxValue);
-	}
-	symbolMaxValue += (int)log10(m) + 1;
-
-	int symbolMinValue = 0;
-	int k = minValue;
-	if (minValue <= 0)
-	{
-		symbolMinValue = 1;
-		k = abs(minValue);
-	}
-	symbolMinValue += (int)log10(k) + 1;
-
-	int bs = (symbolMaxValue > symbolMinValue) ? symbolMaxValue : symbolMinValue;
-
-#pragma endregion
-
-	for (size_t i = 0; i < rows; i++)
-	{
-		for (size_t j = 0; j < cols; j++)
-		{
-			cout << setw(bs + 1) << arr[i][j];
-		}
-		cout << endl;
-	}
-	cout << endl;
+//	srand(time(0));
+//	const int rows = 4;
+//	const int cols = 5;
+//	int arr[rows][cols]; // = { {3,5,8},{2,4},7,8,4 };
+//
+//	cout << arr;
+//
+//	int minValue = 0, maxValue = 9;
+//
+//	for (size_t i = 0; i < rows; i++)
+//	{
+//		for (size_t j = 0; j < cols; j++)
+//		{
+//			arr[i][j] = rand() % (maxValue - minValue + 1) + minValue;
+//		}
+//	}
+//
+//#pragma region MaxSymbol
+//
+//	int symbolMaxValue = 0;
+//	int m = maxValue;
+//	if (maxValue <= 0)
+//	{
+//		symbolMaxValue = 1;
+//		m = abs(maxValue);
+//	}
+//	symbolMaxValue += (int)log10(m) + 1;
+//
+//	int symbolMinValue = 0;
+//	int k = minValue;
+//	if (minValue <= 0)
+//	{
+//		symbolMinValue = 1;
+//		k = abs(minValue);
+//	}
+//	symbolMinValue += (int)log10(k) + 1;
+//
+//	int bs = (symbolMaxValue > symbolMinValue) ? symbolMaxValue : symbolMinValue;
+//
+//#pragma endregion
+//
+//	for (size_t i = 0; i < rows; i++)
+//	{
+//		for (size_t j = 0; j < cols; j++)
+//		{
+//			cout << setw(bs + 1) << arr[i][j];
+//		}
+//		cout << endl;
+//	}
+//	cout << endl;
 
 
 	/// vertical
@@ -131,7 +165,7 @@ int main()
 	}
 	cout << endl;*/
 
-	for (size_t i = 0; i < rows; i++)
+	/*for (size_t i = 0; i < rows; i++)
 	{
 		for (size_t j = 0; j < cols; j++)
 		{
@@ -139,7 +173,7 @@ int main()
 		}
 		cout << endl;
 	}
-	cout << endl;
+	cout << endl;*/
 
 
 	///// 03.06.2024 //////
