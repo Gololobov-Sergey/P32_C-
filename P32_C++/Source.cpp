@@ -16,14 +16,59 @@ int main()
 	system("cls");
 	srand(time(0));
 
+	///// 14.06.2024 //////
+
+	//=============================================================================
+
+	const int size = 3;
+	char field[size][size];
+	initField(field, size);
+	printField(field, size);
+	moveUser(field, size);
+	printField(field, size);
+	moveComp(field, size);
+	printField(field, size);
+
+
+	//const int size = 5;
+	//int a[size];
+	//setArray(a, size, 0, 9);
+	//printArray(a, size);
+	//printArray(a, size);
+
+	//float b[size] = {3.3, 5.55, 7.77, 4.44, 2.222};
+	//setArray(b, size, 0, 9);
+	//printArray(b, size);
+	//cout << findElemArray(b, size, 5) << endl;
+	//cout << maxArray(b, size) << endl;
+
+	/*int a = 3;
+	float b = 5.5;
+
+	cout << Sum(3.6, a, 3.3) << endl;
+
+	auto c = 5;
+
+	decltype (b + a) n;*/
+
+
+
+	/*starLine();
+	starLine(30);
+	starLine(50, '$');
+
+	cout << Sum(10, 20) << endl;
+	cout << Sum(10, 20, 10) << endl;
+	cout << Sum(10, 20, 10, 20) << endl;*/
+
 
 	///// 10.06.2024 //////
 
 	//=============================================================================
 
-	starLine();
+	//starLine();
 
-	cout << starLine << endl;
+	//cout << starLine << endl;
 
 
 	/*int a, b;
@@ -52,13 +97,13 @@ int main()
 
 	cout << (isEven(a) && big10(a)) << endl;*/
 
-	const int size = 15;
-	int a[size];// = { 1,2,5,87,9,8,6,4,3,43};
-	setArray(a, size, 0, 9);
-	printArray(a, size);
-	//cout << findElemArray(a, size, 5) << endl;
-	reverseArray(a, size);
-	printArray(a, size);
+	//const int size = 15;
+	//int a[size];// = { 1,2,5,87,9,8,6,4,3,43};
+	//setArray(a, size, 0, 9);
+	//printArray(a, size);
+	////cout << findElemArray(a, size, 5) << endl;
+	//reverseArray(a, size);
+	//printArray(a, size);
 
 	// HW
 	// min, max, avg, sort, sum 

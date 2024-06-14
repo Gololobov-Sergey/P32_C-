@@ -1,5 +1,6 @@
 #pragma once
 #include<iostream>
+#include<iomanip>
 #include<Windows.h>
 
 using namespace std;
@@ -22,19 +23,25 @@ enum Direction
 };
 
 //виводить лінію із зірочок
-void starLine()
+void starLine(int count = 10, char symbol = '*')
 {
-	for (size_t i = 0; i < 10; i++)
+	for (size_t i = 0; i < count; i++)
 	{
-		cout << "*";
+		cout << symbol;
 	}
 	cout << endl;
 }
 
 
-int Sum(int a, int b)
+//int Sum(int a, int b, int c = 0, int d = 0)
+//{
+//	return a + b + c + d;
+//}
+
+template<class T1, class T2, class T3>
+auto Sum(T1 a, T2 b, T3 c) -> decltype (a + b)
 {
-	return a + b;
+	return a + b + c;
 }
 
 float avg3(int a, int b, int c)
@@ -60,8 +67,8 @@ bool big10(int a)
 	return a > 10;
 }
 
-
-void printArray(int arr[], int size)
+template<class T>
+void printArray(T arr[], int size)
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -70,8 +77,8 @@ void printArray(int arr[], int size)
 	cout << endl;
 }
 
-
-void setArray(int arr[], int size, int minValue, int maxValue)
+template<class T>
+void setArray(T arr[], int size, int minValue, int maxValue)
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -79,7 +86,8 @@ void setArray(int arr[], int size, int minValue, int maxValue)
 	}
 }
 
-int findElemArray(int arr[], int size, int key)
+template<class T>
+int findElemArray(T arr[], int size, int key)
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -91,10 +99,92 @@ int findElemArray(int arr[], int size, int key)
 	return -1;
 }
 
-void reverseArray(int arr[], int size)
+template<class T>
+void reverseArray(T arr[], int size)
 {
 	for (size_t i = 0; i < size / 2; i++)
 	{
 		swap(arr[i], arr[size - 1 - i]);
 	}
+}
+
+template<class T>
+T maxArray(T arr[], int size)
+{
+	T max = arr[0];
+	for (size_t i = 0; i < size; i++)
+	{
+		if (arr[i] > max)
+		{
+			max = arr[i];
+		}
+	}
+	return max;
+}
+
+void initField(char field[][3], int size)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		for (size_t j = 0; j < size; j++)
+		{
+			field[i][j] = ' ';
+		}
+	}
+}
+
+void printField(char field[][3], int size)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		for (size_t j = 0; j < size; j++)
+		{
+			cout << setw(2) << field[i][j];
+			if (j < size - 1)
+			{
+				cout << " |";
+			}
+		}
+		cout << endl;
+		if (i < size - 1)
+		{
+			for (size_t k = 0; k < size * 3 + size - 1; k++)
+			{
+				cout << "-";
+			}
+			cout << endl;
+
+		}
+	}
+}
+
+void moveUser(char field[][3], int size)
+{
+	cout << endl;
+	do
+	{
+		cout << "Ваш вибір (1-9) : ";
+		int choice;
+		cin >> choice;
+		choice--;
+		if (field[choice / size][choice % size] == ' ')
+		{
+			field[choice / size][choice % size] = 'X';
+			return;
+		}
+	} while (true);
+}
+
+void moveComp(char field[][3], int size)
+{
+	cout << endl;
+	do
+	{
+		int choice = rand() % 9;
+		if (field[choice / size][choice % size] == ' ')
+		{
+			field[choice / size][choice % size] = '0';
+			return;
+		}
+	} while (true);
 }
