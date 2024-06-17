@@ -1,11 +1,16 @@
 ﻿#include<iostream>
 #include<iomanip>
 #include<Windows.h>
-
+#include<conio.h>
 #include"myFunc.h"
 
 using namespace std;
 
+
+enum DIRECTION
+{
+	UP = 72, DOWN = 80, LEFT = 75, RIGHT = 77, ESC = 27
+};
 
 int main()
 {
@@ -20,14 +25,90 @@ int main()
 
 	//=============================================================================
 
-	const int size = 3;
-	char field[size][size];
-	initField(field, size);
-	printField(field, size);
-	moveUser(field, size);
-	printField(field, size);
-	moveComp(field, size);
-	printField(field, size);
+	//const int size = 3;
+	//char field[size][size]; // = { {'0', ' ', 'X'},
+	//						  //     {'X', 'X', '0'}, 
+	//						  //     {'0', ' ', 'X'}};
+	//						
+	//int move = 0;
+	//initField(field, size);
+	//do
+	//{
+	//	printField(field, size);
+	//	moveUser(field, size);
+	//	move++;
+	//	system("cls");
+	//	printField(field, size);
+	//	Sleep(1000);
+	//	if (isWinner(field, size) != ' ')
+	//	{
+	//		break;
+	//	}
+	//	system("cls");
+	//	if (move == size * size)
+	//	{
+	//		break;
+	//	}
+
+	//	moveComp(field, size);
+	//	move++;
+	//	printField(field, size);
+	//	
+	//	if (isWinner(field, size) != ' ')
+	//	{
+	//		break;
+	//	}
+	//	
+	//	system("cls");
+	//} while (true);
+	//char win = isWinner(field, size);
+	//if (win == ' ')
+	//{
+	//	cout << "Draw" << endl;
+	//}
+	//else
+	//{
+	//	cout << "Winner: " << win << endl;
+	//}
+
+	//=============================================================================
+
+	CONSOLE_CURSOR_INFO curs = { 0 };
+	curs.dwSize = sizeof(curs);
+	curs.bVisible = FALSE;
+	::SetConsoleCursorInfo(::GetStdHandle(STD_OUTPUT_HANDLE), &curs);
+
+
+	int x = 0, y = 20;
+	while (true)
+	{
+		
+		if (_kbhit())
+		{
+			gotoxy(x, y);
+			cout << "     ";
+			char c = _getch();
+			switch (c)
+			{
+			case LEFT:
+				if (x > 0)
+					x--;
+				break;
+			case RIGHT:
+				if (x < 80)
+					x++;
+				break;
+			default:
+				break;
+			}
+
+			gotoxy(x, y);
+			cout << "#####";
+		}
+	}
+
+
+
 
 
 	//const int size = 5;

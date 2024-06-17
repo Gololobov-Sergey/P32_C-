@@ -16,11 +16,14 @@ void SetColor(int text, int background)
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (WORD)((background << 4) | text));
 }
 
-
-enum Direction
+void gotoxy(int x, int y)
 {
-	UP, DOUN = 10, LEFT, RIGHT
-};
+	COORD coord;
+	coord.X = x;
+	coord.Y = y;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+}
+
 
 //виводить лінію із зірочок
 void starLine(int count = 10, char symbol = '*')
@@ -163,7 +166,7 @@ void moveUser(char field[][3], int size)
 	cout << endl;
 	do
 	{
-		cout << "Ваш вибір (1-9) : ";
+		cout << "Ваш вибір (1-" << size*size << ") : ";
 		int choice;
 		cin >> choice;
 		choice--;
@@ -180,11 +183,80 @@ void moveComp(char field[][3], int size)
 	cout << endl;
 	do
 	{
-		int choice = rand() % 9;
+		int choice = rand() % (size*size);
 		if (field[choice / size][choice % size] == ' ')
 		{
 			field[choice / size][choice % size] = '0';
 			return;
 		}
 	} while (true);
+}
+
+char isWinner(char field[][3], int size) // X - User, 0 - Comp, " " - Continue
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		bool flag = true;
+		for (size_t j = 0; j < size-1; j++)
+		{
+			if (field[i][j] != field[i][j+1] || field[i][j] == ' ')
+			{
+				flag = false;
+				break;
+			}
+		}
+		if (flag)
+		{
+			return field[i][0];
+		}
+	}
+
+	for (size_t j = 0; j < size; j++)
+	{
+		bool flag = true;
+		for (size_t i = 0; i < size-1; i++)
+		{
+			if (field[i][j] != field[i+1][j] || field[i][j] == ' ')
+			{
+				flag = false;
+				break;
+			}
+		}
+		if (flag)
+		{
+			return field[0][j];
+		}
+	}
+
+	bool flag = true;
+	for (size_t i = 0; i < size-1; i++)
+	{
+		if (field[i][i] != field[i+1][i+1] || field[i][i] == ' ')
+		{
+			flag = false;
+			break;
+		}
+	}
+	if (flag)
+	{
+		return field[0][0];
+	}
+
+	flag = true;
+	for (size_t i = 0; i < size-1; i++)
+	{
+		if (field[i][size-1-i] != field[i+1][size-1-i+1] || field[i][size-1-i] == ' ')
+		{
+			flag = false;
+			break;
+		}
+		
+	}
+	if (flag)
+	{
+		return field[0][size - 1];
+	}
+
+
+	return ' ';
 }
