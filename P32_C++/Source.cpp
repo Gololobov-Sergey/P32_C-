@@ -21,6 +21,114 @@ int main()
 	system("cls");
 	srand(time(0));
 
+
+	///// 21.06.2024 //////
+
+	//=============================================================================
+
+	//int a = 5;
+	//cout << typeid(a).name() << endl;
+	//cout << a << endl;
+	//cout << &a << endl;
+	//cout << sizeof(a) << endl;
+
+	//// type *name;
+	//int* pa = &a;
+	//*pa = 100;
+
+	//cout << a << endl;
+
+	//int b = 50;
+	////pa = &b;
+	////*pa = 999;
+	//cout << pa << endl;
+	//cout << b << endl;
+
+	//double d = 2.25;
+	////pa = &d;
+	//double* pd = &d;
+
+	//cout << sizeof(pa) << endl;
+	//cout << sizeof(pd) << endl;
+
+	//char* pc;
+	//cout << sizeof(pc) << endl;
+	
+
+	// ++, --, +, - //   pa = pa + type*n
+
+	/*int a = 5;
+	int* pa = &a;
+	cout << pa << endl;
+	cout << *(pa + 1) << endl;*/
+
+
+	//int arr[4] = { 2,4,6,8 };
+	////cout << arr << endl;
+	////cout << *(arr + 0) << endl;
+	////cout << *(arr + 1) << endl;
+	////cout << *(arr + 2) << endl;
+	////cout << *(arr + 3) << endl;
+
+	//for (int i = 3; i >= 0; i--)
+	//{
+	//	cout << *(arr + i) << " ";   /// *(arr + i) = arr[i]
+	//	//cout << arr[i] << " ";
+	//}
+	//cout << endl;
+
+	//int* pa = arr;
+	//pa++;
+	////arr++; // error
+
+	//for (int* i = arr; i < &arr[4]; i++)
+	//{
+	//	cout << *i << " ";
+	//}
+
+	// < > <=, >=,   == , !=
+
+	/*int d = 0;
+	int a = 5, b = 5;
+	int* pa = &a;
+	int* pb = &a;
+	int* pc = nullptr;
+	cout << pa << endl;
+	cout << pb << endl;
+	cout << pc << endl;
+	cout << (pa != nullptr) << endl;*/
+
+
+
+	int arr[300000] = { 2,4,6,8 };
+
+	int size;
+	cin >> size;
+
+	int* p = new int[size];
+	setArray(p, size, 0, 10);
+	printArray(p, size);
+
+
+	int* a = new int;
+	//
+
+	delete a;
+
+	a = new int;
+
+	for (size_t i = 0; i < 1000000; i++)
+	{
+		a = new int[10000];
+		//Sleep(20);
+	}
+
+
+	//*p = 100;
+	//cout << *p << endl;
+
+
+
 	///// 14.06.2024 //////
 
 	//=============================================================================
@@ -73,13 +181,13 @@ int main()
 
 	//=============================================================================
 
-	CONSOLE_CURSOR_INFO curs = { 0 };
+	/*CONSOLE_CURSOR_INFO curs = { 0 };
 	curs.dwSize = sizeof(curs);
 	curs.bVisible = FALSE;
-	::SetConsoleCursorInfo(::GetStdHandle(STD_OUTPUT_HANDLE), &curs);
+	::SetConsoleCursorInfo(::GetStdHandle(STD_OUTPUT_HANDLE), &curs);*/
 
 
-	int x = 0, y = 20;
+	/*int x = 0, y = 20;
 	while (true)
 	{
 		
@@ -105,7 +213,7 @@ int main()
 			gotoxy(x, y);
 			cout << "#####";
 		}
-	}
+	}*/
 
 
 

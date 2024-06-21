@@ -71,7 +71,7 @@ bool big10(int a)
 }
 
 template<class T>
-void printArray(T arr[], int size)
+void printArray(T* arr, int size)
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -81,7 +81,7 @@ void printArray(T arr[], int size)
 }
 
 template<class T>
-void setArray(T arr[], int size, int minValue, int maxValue)
+void setArray(T* arr, int size, int minValue, int maxValue)
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -90,7 +90,7 @@ void setArray(T arr[], int size, int minValue, int maxValue)
 }
 
 template<class T>
-int findElemArray(T arr[], int size, int key)
+int findElemArray(T* arr, int size, int key)
 {
 	for (size_t i = 0; i < size; i++)
 	{
