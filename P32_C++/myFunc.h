@@ -81,7 +81,7 @@ void printArray(T* arr, int size)
 }
 
 template<class T>
-void setArray(T* arr, int size, int minValue, int maxValue)
+void setArray(T* arr, int size, int minValue = 0, int maxValue = 9)
 {
 	for (size_t i = 0; i < size; i++)
 	{
@@ -259,4 +259,57 @@ char isWinner(char field[][3], int size) // X - User, 0 - Comp, " " - Continue
 
 
 	return ' ';
+}
+
+
+
+template<class T>
+void addValueArray(T*& arr, int& size, T newValue)
+{
+	T* t = new T[size + 1];
+	for (size_t i = 0; i < size; i++)
+	{
+		t[i] = arr[i];
+	}
+	t[size] = newValue;
+	delete[] arr;
+	
+	size++;
+	arr = t;
+}
+
+template<class T>
+void delValueArray(T*& arr, int& size)
+{
+	T* t = new T[size - 1];
+	for (size_t i = 0; i < size-1; i++)
+	{
+		t[i] = arr[i];
+	}
+	delete[] arr;
+	size--;
+	arr = t;
+}
+
+
+void my_swap(int& a, int& b)
+{
+	int t = a;
+	a = b;
+	b = t;
+
+	cout << "In func swap" << endl;
+	cout << a << endl;
+	cout << b << endl;
+}
+
+template<class T>
+void addValueArrayPos(T*& arr, int& size, T newValue, int pos)
+{
+
+}
+
+void rozpodil(int* arr, int size, int*& neg, int& sizeNeg, int*& pos, int& sizePos, int*& zero, int& sizeZero)
+{
+
 }

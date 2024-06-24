@@ -22,6 +22,68 @@ int main()
 	srand(time(0));
 
 
+
+	///// 24.06.2024 //////
+
+	//=============================================================================
+
+	int size;
+	cout << "Size: ";
+	cin >> size;
+
+	int* p = new int[size];
+	setArray(p, size);
+	printArray(p, size);
+
+	int b = 99;
+	addValueArray(p, size, b);
+	printArray(p, size);
+	delValueArray(p, size);
+	printArray(p, size);
+
+
+	int* neg = nullptr;
+	int sizeNeg = 0;
+
+	int* pos = nullptr;
+	int sizePos = 0;
+
+	int* zero = nullptr;
+	int sizeZero = 0;
+
+
+	rozpodil(p, size, neg, sizeNeg, pos, sizePos, zero, sizeZero);
+
+	printArray(neg, sizeNeg);
+	printArray(pos, sizePos);
+	printArray(zero, sizeZero);
+
+
+	/*int* b = nullptr;
+	int sizeB = 0;
+
+	for (size_t i = 0; i < size; i++)
+	{
+		if (p[i] % 2 == 0)
+		{
+			b = addValueArray(b, &sizeB, p[i]);
+		}
+	}
+
+	printArray(b, sizeB);*/
+
+
+	/*int a = 5;            int b = 7;
+	int& ra = a;          int* pb = &b;
+	ra = 55;              *pb = 66;
+	cout << a << endl;
+	cout << b << endl;
+
+	my_swap(a, b);
+
+	cout << a << endl;
+	cout << b << endl;*/
+
 	///// 21.06.2024 //////
 
 	//=============================================================================
@@ -100,28 +162,28 @@ int main()
 
 
 
-	int arr[300000] = { 2,4,6,8 };
+	//int arr[300000] = { 2,4,6,8 };
 
-	int size;
-	cin >> size;
+	//int size;
+	//cin >> size;
 
-	int* p = new int[size];
-	setArray(p, size, 0, 10);
-	printArray(p, size);
+	//int* p = new int[size];
+	//setArray(p, size, 0, 10);
+	//printArray(p, size);
 
 
-	int* a = new int;
-	//
+	//int* a = new int;
+	////
 
-	delete a;
+	//delete a;
 
-	a = new int;
+	//a = new int;
 
-	for (size_t i = 0; i < 1000000; i++)
-	{
-		a = new int[10000];
-		//Sleep(20);
-	}
+	//for (size_t i = 0; i < 1000000; i++)
+	//{
+	//	a = new int[10000];
+	//	//Sleep(20);
+	//}
 
 
 	//*p = 100;
