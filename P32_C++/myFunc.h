@@ -313,3 +313,8 @@ void rozpodil(int* arr, int size, int*& neg, int& sizeNeg, int*& pos, int& sizeP
 {
 
 }
+
+void func(const int* a)
+{
+	//*a = 99;
+}

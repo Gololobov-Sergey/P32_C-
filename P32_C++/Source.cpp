@@ -22,12 +22,39 @@ int main()
 	srand(time(0));
 
 
+	///// 01.07.2024 //////
+
+	//=============================================================================
+
+	int a = 5;
+	int b = 8;
+	const int* pa1 = &a; // покажчик на константне значення
+	//a = 99;
+	//*pa1 = 99;
+	pa1 = &b;
+	//*pa1 = 99;
+
+
+	int* const pa2 = &a; // константний покажчик
+	*pa2 = 99;
+	//pa2 = &b;
+
+	const int* const pa3 = &a;
+	//*pa3 = 99;
+	//pa3 = &b;
+
+	swap(a, b);
+
+	func(&a);
+	cout << a << endl;
+
+	
 
 	///// 24.06.2024 //////
 
 	//=============================================================================
 
-	int size;
+	/*int size;
 	cout << "Size: ";
 	cin >> size;
 
@@ -56,7 +83,7 @@ int main()
 
 	printArray(neg, sizeNeg);
 	printArray(pos, sizePos);
-	printArray(zero, sizeZero);
+	printArray(zero, sizeZero);*/
 
 
 	/*int* b = nullptr;
@@ -76,6 +103,8 @@ int main()
 	/*int a = 5;            int b = 7;
 	int& ra = a;          int* pb = &b;
 	ra = 55;              *pb = 66;
+	ra = b;
+
 	cout << a << endl;
 	cout << b << endl;
 
