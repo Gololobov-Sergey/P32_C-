@@ -318,3 +318,96 @@ void func(const int* a)
 {
 	//*a = 99;
 }
+
+
+template<class T>
+void createArr2D(T**& p, int row, int col)
+{
+	p = new T* [row];
+	for (size_t i = 0; i < row; i++)
+	{
+		p[i] = new T[col];
+	}
+}
+
+
+template<class T>
+void setArr2D(T** p, int row, int col)
+{
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			p[i][j] = rand() % 10;
+		}
+	}
+}
+
+
+template<class T>
+void printArr2D(T** p, int row, int col)
+{
+	for (size_t i = 0; i < row; i++)
+	{
+		for (size_t j = 0; j < col; j++)
+		{
+			cout << p[i][j] << " ";
+		}
+		cout << endl;
+	}
+}
+
+template<class T>
+void deleteArr2D(T**& p, int row)
+{
+	for (size_t i = 0; i < row; i++)
+	{
+		delete[] p[i];
+	}
+	delete[] p;
+	p = nullptr;
+}
+
+
+template<class T>
+void addRowArr2D(T**& p, int& row, int col, T* newRow = nullptr)
+{
+	int count = col;
+	if (newRow != nullptr)
+	{
+		count = _msize(newRow) / sizeof(T);
+	}
+
+	if (col != count)
+		return;
+
+	T** newArr = new T * [row + 1];
+	for (size_t i = 0; i < row; i++)
+	{
+		newArr[i] = p[i];
+	}
+
+	newArr[row] = new T[col]{0};
+	if (newRow != nullptr)
+	{
+		for (size_t i = 0; i < col; i++)
+		{
+			newArr[row][i] = newRow[i];
+		}
+	}
+	row++;
+	delete[]p;
+	p = newArr;
+}
+
+template<class T>
+void addRowPosArr2D(T**& p, int& row, int col, int pos, T* newRow = nullptr)
+{
+
+}
+
+template<class T>
+void delRowPosArr2D(T**& p, int& row, int col, int pos)
+{
+
+}

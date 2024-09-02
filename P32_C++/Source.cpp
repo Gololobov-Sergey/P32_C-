@@ -22,31 +22,67 @@ int main()
 	srand(time(0));
 
 
+	///// 02.09.2024 //////
+
+	//=============================================================================
+
+
+	/*int a = 5;
+	int* p1 = &a;
+	int** p2 = &p1;
+
+	cout << p1 << endl;
+	cout << p2 << endl;
+
+	cout << *p2 << endl;
+	cout << **p2 << endl;*/
+
+	//**p
+	//*(*(p+i)+j) = p[i][j]
+
+	int row = 3, col = 4;
+
+	int** p = nullptr;
+	createArr2D(p, row, col);
+	setArr2D(p, row, col);
+	printArr2D(p, row, col);
+	
+
+	//int* b = new int[col+1];
+	//setArray(b, col+1);
+
+	cout << endl;
+	addRowArr2D(p, row, col);
+	printArr2D(p, row, col);
+
+	deleteArr2D(p, row);
+
+
 	///// 01.07.2024 //////
 
 	//=============================================================================
 
-	int a = 5;
-	int b = 8;
-	const int* pa1 = &a; // покажчик на константне значення
-	//a = 99;
-	//*pa1 = 99;
-	pa1 = &b;
-	//*pa1 = 99;
+	//int a = 5;
+	//int b = 8;
+	//const int* pa1 = &a; // покажчик на константне значення
+	////a = 99;
+	////*pa1 = 99;
+	//pa1 = &b;
+	////*pa1 = 99;
 
 
-	int* const pa2 = &a; // константний покажчик
-	*pa2 = 99;
-	//pa2 = &b;
+	//int* const pa2 = &a; // константний покажчик
+	//*pa2 = 99;
+	////pa2 = &b;
 
-	const int* const pa3 = &a;
-	//*pa3 = 99;
-	//pa3 = &b;
+	//const int* const pa3 = &a; // константний покажчик на константне значення
+	////*pa3 = 99;
+	////pa3 = &b;
 
-	swap(a, b);
+	//swap(a, b);
 
-	func(&a);
-	cout << a << endl;
+	//func(&a);
+	//cout << a << endl;
 
 	
 
