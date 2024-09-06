@@ -125,6 +125,65 @@ T maxArray(T arr[], int size)
 	return max;
 }
 
+template<class T>
+bool asc(T a, T b)
+{
+	return a > b;
+}
+
+template<class T>
+bool desc(T a, T b)
+{
+	return a < b;
+}
+
+
+bool EvenFirst(int a, int b)
+{
+	if (a % 2 == 0 && b % 2 == 1)
+		return false;
+	if (a % 2 == 1 && b % 2 == 0)
+		return true;
+	return asc(a, b);
+}
+
+int SumNumber(int n)
+{
+	int sum = 0;
+	while (n > 0)
+	{
+		sum += n % 10;;
+		n /= 10;
+	}
+	return sum;
+}
+
+bool FromSumNumber(int a, int b)
+{
+	int sumA = SumNumber(a);
+	int sumB = SumNumber(b);
+	if (sumA == sumB)
+		return asc(a, b);
+	return asc(sumA, sumB);
+}
+
+template<class T>
+void bubbleSort(T* arr, int size, bool (*method)(T a, T b) = asc)
+{
+	for (size_t i = 0; i < size-1; i++)
+	{
+		for (size_t j = 0; j < size-1-i; j++)
+		{
+			if (method(arr[j], arr[j + 1]))
+			{
+				swap(arr[j], arr[j + 1]);
+			}
+		}
+	}
+}
+
+
+
 void initField(char field[][3], int size)
 {
 	for (size_t i = 0; i < size; i++)
@@ -410,4 +469,129 @@ template<class T>
 void delRowPosArr2D(T**& p, int& row, int col, int pos)
 {
 
+}
+
+
+template <class T>
+void deleteRowMatrix(T**& arr, int& rows)
+{
+	T** newArr = new T* [rows - 1];
+	for (size_t i = 0; i < rows - 1; i++)
+	{
+		newArr[i] = arr[i];
+	}
+	delete[] arr[rows - 1];
+	delete[] arr;
+	arr = newArr;
+	rows--;
+}
+
+
+template<class T>
+void delete2D(T**& p, int& row)
+{
+	delete p[row - 1];
+	row--;
+}
+
+template<class T>
+void addColummArray2D(T**& p, int row, int& col, T* newColumn = nullptr)
+{
+	for (size_t i = 0; i < row; i++)
+	{
+
+		addValueArray(p[i], col, newColumn[i]);
+		col--;
+
+
+		/*T* newRow = new T[col + 1];
+		for (size_t j = 0; j < col; j++)
+		{
+			newRow[j] = p[i][j];
+		}
+		newRow[col] = (newColumn == nullptr) ? 0 : newColumn[i];
+		delete[] p[i];
+		p[i] = newRow;*/
+	}
+	col++;
+}
+
+
+void hello()
+{
+	cout << "Hello" << endl;
+}
+
+void goodbye()
+{
+	cout << "Goodbye" << endl;
+}
+
+int sum(int a, int b)
+{
+	return a + b;
+}
+
+int diff(int a, int b)
+{
+	return a - b;
+}
+
+int mult(int a, int b)
+{
+	return a * b;
+}
+
+int division(int a, int b)
+{
+	return a / b;
+}
+
+int pow_(int a, int b)
+{
+	return pow(a, b);
+}
+
+
+// type(*nameFunc(paramFunc))(paramReturnFunc)
+
+
+void gun(int* bullet)
+{
+	cout << "->" << endl;
+	bullet[0]--;
+}
+
+void mashineGun(int* bullet)
+{
+	cout << "->->->->->" << endl;
+	bullet[1] -= 5;
+}
+
+
+void arrow(int* bullet)
+{
+	cout << ">>----->" << endl;
+	bullet[2]--;
+}
+
+
+int maxElemArray(int* arr, int size)
+{
+	int max = arr[0];
+	for (size_t i = 0; i < size; i++)
+	{
+		if (arr[i] > max) 
+		{
+			max = arr[i];
+		}
+	}
+	return max;
+}
+
+void(*logic(int* bullets))(int*)
+{
+	void(*weapon[])(int*) = { gun, mashineGun, arrow };
+
+	return weapon[findElemArray(bullets, 3, maxElemArray(bullets, 3))];
 }

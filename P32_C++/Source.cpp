@@ -21,6 +21,83 @@ int main()
 	system("cls");
 	srand(time(0));
 
+	///// 06.09.2024 //////
+
+	//=============================================================================
+
+
+	/*int size;
+	cin >> size;
+
+	int* p = new int[size];
+	setArray(p, size, 0, 999);
+	printArray(p, size);
+	bubbleSort(p, size, FromSumNumber);
+	printArray(p, size);*/
+
+
+	int bullets[3] = { 50, 50, 50 };
+	void(*shot)(int*);
+	
+
+	while (true)
+	{
+		shot = logic(bullets);
+		shot(bullets);
+		Sleep(1000);
+	}
+	
+
+
+
+
+	// type (*name)(param);
+
+	//void (*message)();
+	//message = hello;
+	//message();
+	//message = goodbye;
+	//message();
+
+	////int (*operation)(int, int) = sum;
+	//int (*operation[])(int, int) = {sum, diff, mult, division, pow_};
+	//int a, b;
+	//cin >> a >> b;
+	//cout << "1+, 2-, 3-*, 4/, 5^  : ";
+	//int choice;
+	//cin >> choice;
+	//cout << operation[choice-1](a, b) << endl;
+
+
+
+
+
+	/*int row = 3, col = 4;
+
+	int** p = nullptr;
+	createArr2D(p, row, col);
+	setArr2D(p, row, col);
+	printArr2D(p, row, col);*/
+
+
+	//swap(p[0], p[row - 1]);
+
+	/*for (size_t i = 0; i < col; i++)
+	{
+		swap(p[0][i], p[row - 1][i]);
+	}*/
+
+
+	/*starLine(20);
+
+	int* b = new int[row];
+	setArray(b, row);
+	printArray(b, row);
+	starLine(20);
+
+	addColummArray2D(p, row, col, b);
+	
+	printArr2D(p, row, col);*/
 
 	///// 02.09.2024 //////
 
@@ -40,22 +117,22 @@ int main()
 	//**p
 	//*(*(p+i)+j) = p[i][j]
 
-	int row = 3, col = 4;
+	//int row = 3, col = 4;
 
-	int** p = nullptr;
-	createArr2D(p, row, col);
-	setArr2D(p, row, col);
-	printArr2D(p, row, col);
-	
+	//int** p = nullptr;
+	//createArr2D(p, row, col);
+	//setArr2D(p, row, col);
+	//printArr2D(p, row, col);
+	//
 
-	//int* b = new int[col+1];
-	//setArray(b, col+1);
+	////int* b = new int[col];
+	////setArray(b, col+1);
 
-	cout << endl;
-	addRowArr2D(p, row, col);
-	printArr2D(p, row, col);
+	//cout << endl;
+	//addRowArr2D(p, row, col);
+	//printArr2D(p, row, col);
 
-	deleteArr2D(p, row);
+	//deleteArr2D(p, row);
 
 
 	///// 01.07.2024 //////
