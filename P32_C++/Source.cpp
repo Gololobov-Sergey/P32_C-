@@ -1,8 +1,11 @@
-﻿#include<iostream>
+﻿//#define _CRT_SECURE_NO_WARNINGS
+#include<iostream>
 #include<iomanip>
 #include<Windows.h>
 #include<conio.h>
+
 #include"myFunc.h"
+#include"strFunc.h"
 
 using namespace std;
 
@@ -21,6 +24,83 @@ int main()
 	system("cls");
 	srand(time(0));
 
+
+	///// 09.09.2024 //////
+
+	//=============================================================================
+
+	/*char str[] = { 'H', 'e', 'l', 'l', 'o', '\0'};
+
+	char str2[] = "Hello C++";
+
+	int arr[] = { 1,2,3 };
+
+	cout << arr << endl;
+
+	cout << str << endl;
+
+	cout << lenstr(str) << endl;
+
+	cout << strlen(str) << endl;*/
+
+	//char* buff = new char[80];
+
+	//cin.getline(buff, 80);
+	////cout << buff << endl;
+
+	//char* dStr = new char[strlen(buff) + 1];
+	//strcpy_s(dStr, strlen(buff)+1, buff);
+
+	//cout << dStr << endl;
+
+	//cout << replaceSymbol(dStr, 'a', '+') << endl;
+
+
+	char str1[80] = "erewrtertwertwertwert";
+	char str2[80];
+	//cin.getline(str1, 80);
+	//cin.getline(str2, 80);
+
+	//strcpy_s(str2, strlen(str1) + 1, str1);
+	//strncpy_s(str2, strlen(str1) + 1, str1, 5);
+	
+	//strcat_s(str1, 80, str2);
+	//strncat_s(str1, 80, str2, 5);
+
+	//cout << strcmp(str1, str2) << endl;
+	//cout << strncmp(str1, str2, 5) << endl;
+	//cout << _stricmp(str1, str2) << endl;
+	//cout << _strnicmp(str1, str2, 5) << endl;
+
+	/*char* t = strrchr(str1, 'a');
+	if(t != nullptr)
+		cout << t << endl;*/
+
+
+	/*char* t = strstr(str1, "ma");
+	if (t != nullptr)
+		cout << t << endl;*/
+
+	//_strlwr_s(str1, 80);
+	//_strupr_s(str1, 80);
+
+	/*int a1 = atoi(str1);
+	long a2 = atol(str1);
+	double a3 = atof(str1);
+
+	cout << a3 << endl;*/
+
+	//_itoa_s(34645646547, str1, 36);
+
+	//cout << str1 << endl;
+
+
+	
+
+	//cout << kolslov(str1) << endl;
+
+	// ertewr   ewrtre wertewr  
+
 	///// 06.09.2024 //////
 
 	//=============================================================================
@@ -36,7 +116,7 @@ int main()
 	printArray(p, size);*/
 
 
-	int bullets[3] = { 50, 50, 50 };
+	/*int bullets[3] = { 50, 50, 50 };
 	void(*shot)(int*);
 	
 
@@ -45,10 +125,8 @@ int main()
 		shot = logic(bullets);
 		shot(bullets);
 		Sleep(1000);
-	}
+	}*/
 	
-
-
 
 
 	// type (*name)(param);
