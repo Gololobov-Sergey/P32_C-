@@ -6,6 +6,7 @@
 
 #include"myFunc.h"
 #include"strFunc.h"
+#include"MyStruct.h"
 
 using namespace std;
 
@@ -15,6 +16,8 @@ enum DIRECTION
 	UP = 72, DOWN = 80, LEFT = 75, RIGHT = 77, ESC = 27
 };
 
+
+
 int main()
 {
 	SetConsoleCP(1251);
@@ -23,6 +26,61 @@ int main()
 	SetColor(White, Black);
 	system("cls");
 	srand(time(0));
+
+
+	///// 13.09.2024 //////
+
+	//=============================================================================
+
+
+	/*Point p1;
+	p1.x = 10;
+	p1.y = 20;
+	p1.name = 'A';
+
+	Point p2 = { 'B', 3, 6 };
+
+	printPoint(p1);
+
+	Point* p3 = new Point;
+	p3->name = 'C';
+	p3->x = 5;
+	p3->y = 2;
+
+	printPoint(*p3);
+
+	Point p4[] = { 'D', 5, 7, 'F', 4, 6 };
+	for (size_t i = 0; i < 2; i++)
+	{
+		printPoint(p4[i]);
+	}*/
+
+	/*Point p[5];
+	setArray(p, 5);
+	for (size_t i = 0; i < 5; i++)
+	{
+		printPoint(p[i]);
+	}
+
+	Point p1 = maxLength(p, 5);
+	printPoint(p1);*/
+
+
+	/*Date d;
+	d.set();
+	d.print();
+
+
+	Human h;
+	h.birthDay.set();
+	h.birthDay.print();*/
+
+
+	Car car;
+	car.Move();
+	car.Beep();
+
+
 
 
 	///// 09.09.2024 //////
@@ -56,8 +114,8 @@ int main()
 	//cout << replaceSymbol(dStr, 'a', '+') << endl;
 
 
-	char str1[80] = "erewrtertwertwertwert";
-	char str2[80];
+	//char str1[80] = "erewrtertwertwertwert";
+	//char str2[80];
 	//cin.getline(str1, 80);
 	//cin.getline(str2, 80);
 

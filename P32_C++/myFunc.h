@@ -3,6 +3,8 @@
 #include<iomanip>
 #include<Windows.h>
 
+#include"MyStruct.h"
+
 using namespace std;
 
 enum Color
@@ -86,6 +88,17 @@ void setArray(T* arr, int size, int minValue = 0, int maxValue = 9)
 	for (size_t i = 0; i < size; i++)
 	{
 		arr[i] = rand() % (maxValue - minValue + 1) + minValue;
+	}
+}
+
+
+void setArray(Point* arr, int size)
+{
+	for (size_t i = 0; i < size; i++)
+	{
+		arr[i].x = rand() % 10;
+		arr[i].y = rand() % 10;
+		arr[i].name = 'A' + i;
 	}
 }
 
