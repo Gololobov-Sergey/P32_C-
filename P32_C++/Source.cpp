@@ -7,6 +7,7 @@
 #include"myFunc.h"
 #include"strFunc.h"
 #include"MyStruct.h"
+#include"Menu.h"
 
 using namespace std;
 
@@ -32,6 +33,8 @@ int main()
 
 	//=============================================================================
 
+
+	int c = Menu::select_vertical({ "Add", "Del", "Exit" }, HorizontalAlignment::Center);
 
 	/*Point p1;
 	p1.x = 10;

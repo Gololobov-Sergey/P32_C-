@@ -142,6 +142,7 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="myFunc.h" />
     <ClInclude Include="MyStruct.h" />
     <ClInclude Include="strFunc.h" />
