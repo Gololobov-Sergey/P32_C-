@@ -3,6 +3,8 @@
 #include<iomanip>
 #include<Windows.h>
 
+#include"Menu.h"
+
 using namespace std;
 
 
@@ -123,14 +125,18 @@ struct Student
 	int* marks = nullptr;
 	int size_mark = 0;
 
-	void addMark(int mark)
+	void addMark()
 	{
+		int m;
+		cin >> m;
+		addValueArray(marks, size_mark, m);
 
 	}
 
-	void setName(char* n)
+	void setName(const char* n)
 	{
-
+		name = new char[strlen(n) + 1];
+		strcpy_s(name, strlen(n) + 1, n);
 	}
 
 	float avgMarks()
@@ -140,7 +146,31 @@ struct Student
 
 	void info()
 	{
+		cout << name << " , mark: ";
+		for (size_t i = 0; i < size_mark; i++)
+		{
+			cout << marks[i] << " ";
+		}
+		cout << endl;
+	}
 
+	void menu()
+	{
+		while (true)
+		{
+			system("cls");
+			int c = Menu::select_vertical({ "Add mark", "Return" }, HorizontalAlignment::Center);
+			switch (c)
+			{
+			case 0:
+				addMark();
+				break;
+			case 1:
+				return;
+			default:
+				break;
+			}
+		}
 	}
 };
 
@@ -151,7 +181,11 @@ struct Group
 
 	void addStudent() // void addStudent(Student s)
 	{
-
+		Student st;
+		char n[80];
+		cin.getline(n, 80);
+		st.setName(n);
+		addValueArray(students, size, st);
 	}
 
 	void list5()
@@ -163,5 +197,53 @@ struct Group
 	void list2()
 	{
 
+	}
+
+	void info()
+	{
+		for (size_t i = 0; i < size; i++)
+		{
+			students[i].info();
+		}
+		system("pause");
+	}
+
+	void work()
+	{
+		system("cls");
+		for (size_t i = 0; i < size; i++)
+		{
+			cout << i+1 << ". " << students[i].name << endl;
+		}
+		cout << "Enter number students: ";
+		int c;
+		cin >> c;
+		students[c - 1].menu();
+	}
+
+	void menu()
+	{
+		while (true)
+		{
+			system("cls");
+			int c = Menu::select_vertical({ "Add Student", "List 5", "Info", "Work with students", "Exit" }, HorizontalAlignment::Center);
+			switch (c)
+			{
+			case 0:
+				addStudent();
+				break;
+			case 1:
+				list5();
+				break;
+			case 2:
+				info();
+				break;
+			case 3:
+				work();
+				break;
+			default:
+				break;
+			}
+		}
 	}
 };

@@ -34,7 +34,11 @@ int main()
 	//=============================================================================
 
 
-	int c = Menu::select_vertical({ "Add", "Del", "Exit" }, HorizontalAlignment::Center);
+	//int c = Menu::select_vertical({ "Add", "Del", "Exit" }, HorizontalAlignment::Center);
+
+
+	Group gr;
+	gr.menu();
 
 	/*Point p1;
 	p1.x = 10;
