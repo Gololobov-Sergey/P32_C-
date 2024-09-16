@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include<iostream>
 #include<iomanip>
 #include<Windows.h>
@@ -129,8 +129,14 @@ struct Student
 	{
 		int m;
 		cin >> m;
-		addValueArray(marks, size_mark, m);
+		cin.ignore();
+		addMark(m);
 
+	}
+
+	void addMark(int m)
+	{
+		addValueArray(marks, size_mark, m);
 	}
 
 	void setName(const char* n)
@@ -152,6 +158,11 @@ struct Student
 			cout << marks[i] << " ";
 		}
 		cout << endl;
+	}
+
+	void save(ofstream& out)
+	{
+
 	}
 
 	void menu()
@@ -218,11 +229,13 @@ struct Group
 		cout << "Enter number students: ";
 		int c;
 		cin >> c;
+		cin.ignore();
 		students[c - 1].menu();
 	}
 
 	void menu()
 	{
+		//load();
 		while (true)
 		{
 			system("cls");

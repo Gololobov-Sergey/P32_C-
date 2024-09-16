@@ -4,6 +4,8 @@
 #include<Windows.h>
 #include<conio.h>
 
+#include<fstream>
+
 #include"myFunc.h"
 #include"strFunc.h"
 #include"MyStruct.h"
@@ -29,6 +31,90 @@ int main()
 	srand(time(0));
 
 
+	///// 16.09.2024 //////
+
+	//=============================================================================
+
+	//ofstream fout;
+	//fout.open("text.txt");
+	//
+	//int a[5] = { 1,2,3,4,5 };
+
+	////fout << "Hello C++" << endl;
+
+	//for (size_t i = 0; i < 5; i++)
+	//{
+	//	fout << a[i] << " ";
+	//}
+
+	//fout.close();
+
+	int* b = nullptr;
+	int size = 0;
+
+	//ifstream fin("text.txt");
+	//ofstream out("text1.txt");
+	//if (fin.is_open())
+	//{
+	//	/*for (size_t i = 0; i < 5; i++)
+	//	{
+	//		fin >> b[i];
+	//	}*/
+	//	int c;
+	//	while (fin >> c)
+	//	{
+	//		if (c % 2 == 0)
+	//		{
+	//			out << c << " ";
+	//		}
+	//		//addValueArray(b, size, c);
+	//	}
+	//}
+
+
+	/*ifstream in("MyStruct.h");
+	char buff[80];
+	while (in.getline(buff, 80))
+	{
+		cout << buff << endl;
+	}*/
+	
+
+	/*Student s;
+	s.setName("Ivan");
+	s.addMark(10);
+	s.addMark(11);
+	s.addMark(12);
+	s.addMark(9);
+	s.info();
+	
+	ofstream out("Students.txt");
+	out << s.name << endl;
+	for (size_t i = 0; i < s.size_mark; i++)
+	{
+		out << s.marks[i] << " ";
+	}
+	out << endl;*/
+
+
+	Student s;
+	ifstream in("Students.txt");
+	char buff[80];
+	in.getline(buff, 80);
+	s.setName(buff);
+	int c;
+	while (in >> c)
+	{
+		addValueArray(s.marks, s.size_mark, c);
+	}
+
+	s.info();
+
+	//fstream f("ewr.txt", ios::app|ios::out);
+
+	//printArray(b, size);
+
+
 	///// 13.09.2024 //////
 
 	//=============================================================================
@@ -37,8 +123,8 @@ int main()
 	//int c = Menu::select_vertical({ "Add", "Del", "Exit" }, HorizontalAlignment::Center);
 
 
-	Group gr;
-	gr.menu();
+	/*Group gr;
+	gr.menu();*/
 
 	/*Point p1;
 	p1.x = 10;
@@ -83,9 +169,9 @@ int main()
 	h.birthDay.print();*/
 
 
-	Car car;
+	/*Car car;
 	car.Move();
-	car.Beep();
+	car.Beep();*/
 
 
 

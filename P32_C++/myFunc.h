@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include<iostream>
 #include<iomanip>
 #include<Windows.h>
@@ -27,7 +27,7 @@ void gotoxy(int x, int y)
 }
 
 
-//виводить лінію із зірочок
+//РІРёРІРѕРґРёС‚СЊ Р»С–РЅС–СЋ С–Р· Р·С–СЂРѕС‡РѕРє
 void starLine(int count = 10, char symbol = '*')
 {
 	for (size_t i = 0; i < count; i++)
@@ -238,7 +238,7 @@ void moveUser(char field[][3], int size)
 	cout << endl;
 	do
 	{
-		cout << "Ваш вибір (1-" << size*size << ") : ";
+		cout << "Р’Р°С€ РІРёР±С–СЂ (1-" << size*size << ") : ";
 		int choice;
 		cin >> choice;
 		choice--;
