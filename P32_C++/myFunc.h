@@ -28,7 +28,7 @@ void gotoxy(int x, int y)
 
 
 //виводить лінію із зірочок
-void starLine(int count = 10, char symbol = '*')
+inline void starLine(int count = 10, char symbol = '*')
 {
 	for (size_t i = 0; i < count; i++)
 	{

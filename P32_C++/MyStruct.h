@@ -162,7 +162,31 @@ struct Student
 
 	void save(ofstream& out)
 	{
+		out << name << endl;
+		out << size_mark << endl;
+		for (size_t i = 0; i < size_mark; i++)
+		{
+			out << marks[i] << " ";
+		}
+		out << endl;
+	}
 
+	void load(ifstream& in)
+	{
+		char buff[80];
+		in.getline(buff, 80);
+		setName(buff);
+		in >> size_mark;
+		marks = new int[size_mark];
+		for (size_t i = 0; i < size_mark; i++)
+		{
+			in >> marks[i];
+		}
+
+		in.getline(buff, 80);
+
+		//in.get();
+		//in.get();
 	}
 
 	void menu()
@@ -233,13 +257,46 @@ struct Group
 		students[c - 1].menu();
 	}
 
+	void save()
+	{
+		ofstream out("students.txt");
+		out << size << endl;
+		for (size_t i = 0; i < size; i++)
+		{
+			students[i].save(out);
+		}
+		out.close();
+	}
+
+	void load()
+	{
+		ifstream in("students.txt");
+		if (in.is_open())
+		{
+			in >> size;
+			in.get();
+			students = new Student[size];
+			for (size_t i = 0; i < size; i++)
+			{
+				students[i].load(in);
+			}
+		}
+		else
+		{
+			cout << "File not found!" << endl;
+			system("pause");
+		}
+		in.close();
+	}
+
+
 	void menu()
 	{
-		//load();
+		load();
 		while (true)
 		{
 			system("cls");
-			int c = Menu::select_vertical({ "Add Student", "List 5", "Info", "Work with students", "Exit" }, HorizontalAlignment::Center);
+			int c = Menu::select_vertical({ "Add Student", "List 5", "Info", "Work with students", "Save", "Exit" }, HorizontalAlignment::Center);
 			switch (c)
 			{
 			case 0:
@@ -254,6 +311,11 @@ struct Group
 			case 3:
 				work();
 				break;
+			case 4:
+				save();
+				break;
+			case 5:
+				exit(0);
 			default:
 				break;
 			}

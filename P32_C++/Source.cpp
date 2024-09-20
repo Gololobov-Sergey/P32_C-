@@ -11,6 +11,14 @@
 #include"MyStruct.h"
 #include"Menu.h"
 
+#define SIZE 50
+#define BEGIN {
+#define END }
+#define ЦИКЛ(n) for(int i = 0; i < (n); i++)
+#define SQR(n) (n)*(n)
+
+#define TEST
+
 using namespace std;
 
 
@@ -31,6 +39,81 @@ int main()
 	srand(time(0));
 
 
+
+	///// 20.09.2024 //////
+
+	//=============================================================================
+
+	// | , & , ~ , >> , << 
+
+	cout << (5 | 3) << endl;
+	cout << (5 & 3) << endl;
+	cout << ~5 << endl;
+	cout << (5 << 3) << endl;
+	cout << (5 >> 2) << endl;
+
+	cout << (18 & 16) << endl;
+
+
+	int d = 20, m = 9, y = 2024; //1200
+
+	int date = d;
+	date <<= 4;
+	date |= m;
+	date <<= 12;
+	date |= y;
+
+	cout << date << endl;
+
+	cout << sizeof(Date) << endl;
+
+	int d1, m1, y1;
+
+	y1 = date & 4095;
+	date >>= 12;
+	m1 = date & 0b1111;
+	date >>= 4;
+	d1 = date;
+
+	cout << d1 << " " << m1 << " " << y1 << endl;
+
+
+
+
+
+
+	/*int arr[SIZE];
+	ЦИКЛ(20)
+	BEGIN
+		cout << "mama" << endl;
+	END
+
+	cout << SQR(5+1) << endl;*/
+
+//#if
+//#ifdef
+//#ifndef
+
+
+//#elif
+
+//#else
+
+//#endif
+
+//#ifndef TEST
+//	int arr[SIZE];
+//
+//#else
+//	int* arr = new int[SIZE];
+//
+//#endif // TEST
+//
+//	setArray(arr, SIZE);
+//	printArray(arr, SIZE);
+
+
+
 	///// 16.09.2024 //////
 
 	//=============================================================================
@@ -49,8 +132,8 @@ int main()
 
 	//fout.close();
 
-	int* b = nullptr;
-	int size = 0;
+	/*int* b = nullptr;
+	int size = 0;*/
 
 	//ifstream fin("text.txt");
 	//ofstream out("text1.txt");
@@ -97,7 +180,7 @@ int main()
 	out << endl;*/
 
 
-	Student s;
+	/*Student s;
 	ifstream in("Students.txt");
 	char buff[80];
 	in.getline(buff, 80);
@@ -108,7 +191,7 @@ int main()
 		addValueArray(s.marks, s.size_mark, c);
 	}
 
-	s.info();
+	s.info();*/
 
 	//fstream f("ewr.txt", ios::app|ios::out);
 
@@ -248,7 +331,7 @@ int main()
 
 	
 
-	//cout << kolslov(str1) << endl;
+	//cout << countWords(str1) << endl;
 
 	// ertewr   ewrtre wertewr  
 
